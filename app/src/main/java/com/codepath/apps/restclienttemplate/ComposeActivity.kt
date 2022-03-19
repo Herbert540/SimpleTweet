@@ -3,9 +3,12 @@ package com.codepath.apps.restclienttemplate
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.codepath.apps.restclienttemplate.models.Tweet
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
@@ -18,6 +21,8 @@ class ComposeActivity : AppCompatActivity() {
 
     lateinit var client: TwitterClient
 
+    lateinit var counter: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compose)
@@ -26,6 +31,8 @@ class ComposeActivity : AppCompatActivity() {
         btnTweet = findViewById(R.id.btnTweet)
 
         client = TwitterApplication.getRestClient(this)
+
+        counter = findViewById(R.id.counter)
 
         //Handling the user's click on the tweet button
         btnTweet.setOnClickListener{
@@ -69,6 +76,25 @@ class ComposeActivity : AppCompatActivity() {
                 }
 
         }
+
+        etCompose.addTextChangedListener(object: TextWatcher {
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                // Fires right as the text is being changed (even supplies the range of text)
+                val words = s.toString().trim()
+                val numberOfWords = words.split("\\s+".toRegex()).size
+                counter.text = "${280 - numberOfWords}"
+
+            }
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                // Fires right before text is changing
+            }
+
+            override fun afterTextChanged(s: Editable) {
+                // Fires right after the text has changed
+
+            }
+        })
     }
     companion object {
         val TAG = "ComposeActivity"
