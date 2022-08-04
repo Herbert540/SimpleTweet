@@ -16,18 +16,10 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] User can view more tweets as they scroll with infinite pagination
-- [ ] Improve the user interface and theme the app to feel "twitter branded"
-- [ ] Links in tweets are clickable and will launch the web browser
-- [ ] User can tap a tweet to display a "detailed" view of that tweet
-- [ ] User can see embedded image media within the tweet detail view
-- [ ] User can watch embedded video within the tweet
-- [ ] User can open the twitter app offline and see last loaded tweets
-- [ ] On the Twitter timeline, leverage the CoordinatorLayout to apply scrolling behavior that hides / shows the toolbar.
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] User can view more tweets as they scroll with infinite pagination
+- [x] Improve the user interface and theme the app to feel "twitter branded"
+- [x] User can see embedded image media within the tweet detail view
+- [x] User can open the twitter app offline and see last loaded tweets
 
 ## Video Walkthrough
 
@@ -55,15 +47,9 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] User is using **"Twitter branded" colors and styles**
-- [ ] User can click links in tweets launch the web browser 
-- [ ] User can **select "reply" from detail view to respond to a tweet**
-- [ ] The "Compose" action is moved to a FloatingActionButton instead of on the AppBar
-- [ ] Compose tweet functionality is build using modal overlay
-- [ ] Use Parcelable instead of Serializable using the popular [Parceler library](http://guides.codepath.org/android/Using-Parceler).
-- [ ] User can **open the twitter app offline and see last loaded tweets**. Persisted in SQLite tweets are refreshed on every application launch. While "live data" is displayed when app can get it from Twitter API, it is also saved for use in offline mode.
-- [ ] When a user leaves the compose view without publishing and there is existing text, prompt to save or delete the draft. If saved, the draft should then be **persisted to disk** and can later be resumed from the compose view.
-- [ ] Enable your app to receive implicit intents from other apps. When a link is shared from a web browser, it should pre-fill the text and title of the web page when composing a tweet.
+- [x] User is using **"Twitter branded" colors and styles**
+- [x] User can click links in tweets to launch the web browser 
+- [x] User can **open the twitter app offline and see last loaded tweets**. Persisted in SQLite tweets are refreshed on every application launch. While "live data" is displayed when app can get it from Twitter API, it is also saved for use in offline mode.
 
 ## Video Walkthrough
 
